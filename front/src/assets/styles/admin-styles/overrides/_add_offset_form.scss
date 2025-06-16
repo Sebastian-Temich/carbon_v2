@@ -1,0 +1,89 @@
+// need to override to be able to see the scrollbar
+.p-scrollpanel .p-scrollpanel-bar {
+  background-color: var(--blue-500);
+  border: 0 none;
+  opacity: 1;
+}
+.p-scrollpanel-bar-y {
+  width: 5px;
+}
+.form-Scrollbar {
+  height: 100%;
+}
+
+.add-offset-form {
+  .add-offset-button {
+    width: 120px;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .form-register {
+    width: 124px;
+  }
+
+  .mt-2 {
+    margin-top: 0.7rem !important;
+  }
+
+  .field .col-12 {
+    padding: 1px;
+    margin-block: 15px;
+    padding-top: 9px;
+  }
+}
+
+.select-img {
+  text-align: center;
+  & img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 320px;
+  }
+}
+
+.select-img-pointer {
+  cursor: pointer;
+}
+
+.preview-img {
+  width: 320px;
+  text-align: center;
+}
+
+input[type='file']::file-selector-button {
+  width: 120px;
+  margin-right: 20px;
+  border: none;
+  background: #6366f1;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  align-items: center;
+}
+
+input[type='file']::file-selector-button:hover {
+  background: #4f46e5;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .add-offset-form {
+    grid-template-columns: 100% [col-start];
+    width: 100%;
+
+    .add-offset-button {
+      width: 120px;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .from-register {
+      transform: translate(7px, 0rem);
+      width: 100%;
+    }
+  }
+}

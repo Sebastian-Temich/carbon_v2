@@ -1,0 +1,30 @@
+.img_viewList_wrapper {
+  display: grid;
+  justify-content: center;
+  > img {
+    height: 400px;
+    width: 100% !important;
+    padding: 15px 15px 15px 15px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    transition: 200ms ease-in-out;
+  }
+}
+
+.sdg_goals {
+  margin-block: 10px;
+
+  .p-disabled {
+    opacity: 1;
+  }
+  .col-12 {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .img_viewList {
+    display: block !important;
+  }
+}

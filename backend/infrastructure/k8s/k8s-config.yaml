@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: carbon-backend-cm
+data:
+  database-uri: "postgresql://postgres:password@localhost/testdb1"
+  database-schema: "example_schema"

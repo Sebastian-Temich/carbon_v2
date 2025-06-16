@@ -1,0 +1,30 @@
+image: node:16.17.1
+
+pipelines:
+  custom:
+    buildImage:
+      - step:
+          name: Tests
+          script:
+            - echo "Not implemented"
+      - step:
+          name: Build
+          artifacts:
+            - build/**
+          script:
+            - yarn install
+            - yarn build
+      - step:
+          name: Build docker image and push to registry
+          services:
+            - docker
+          script:
+            - export BRANCH_NAME_ESC=`echo "$BITBUCKET_BRANCH" | sed -r 's/\//-/g'`
+            - echo "Escaped branch name is ${BRANCH_NAME_ESC}"
+            - export IMAGE_NAME="${CARBON_CONTAINER_REGISTRY}/${DOCKER_IMAGE_NAME}:${BRANCH_NAME_ESC}"
+            - echo "Image name is ${IMAGE_NAME}"
+            - docker --version
+            - echo $CARBON_SCALEWAY_SECRET | docker login $CARBON_CONTAINER_REGISTRY -u nologin --password-stdin
+            - docker build --no-cache -t $IMAGE_NAME .
+            - docker image ls
+            - docker push $IMAGE_NAME

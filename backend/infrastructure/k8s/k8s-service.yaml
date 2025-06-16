@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: carbon-backend-svc
+  labels:
+    app: carbon-backend-dp
+spec:
+  ports:
+    - port: 19001
+      targetPort: 8000
+      protocol: TCP
+  selector:
+    app: carbon-backend-dp

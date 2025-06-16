@@ -1,0 +1,49 @@
+.layout-footer {
+  padding: 20px;
+  background-color: $footerBgColor;
+  border-top: 1px solid $footerBorderColor;
+
+  img {
+    height: 30px;
+  }
+
+  .footer-icons {
+    text-align: right;
+
+    button {
+      color: $textSecondaryColor;
+      font-size: 1.5rem;
+      margin-right: 16px;
+      margin-top: 6px;
+      display: inline-block;
+      transition: color $transitionDuration;
+
+      &:hover {
+        color: $textColor;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .layout-footer {
+    padding: 5px 0px 5px 5px;
+    background-color: $footerBgColor;
+    border-top: 1px solid $footerBorderColor;
+    .grid {
+      margin-right: 0;
+      align-items: center;
+      button {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .footer-icons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-left: 20px;
+    }
+  }
+}

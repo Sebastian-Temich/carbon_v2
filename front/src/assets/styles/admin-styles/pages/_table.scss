@@ -1,0 +1,142 @@
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+  > img {
+    height: 300px;
+    width: 100% !important;
+    padding: 15px 15px 15px 15px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    transition: 200ms ease-in-out;
+  }
+  > .content {
+    position: absolute;
+    inset: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 200ms ease-in-out;
+  }
+
+  > .opacity-transition {
+    transition-duration: 0.3s;
+    transition-property: opacity;
+  }
+
+  &:hover {
+    cursor: pointer;
+    > img.blur {
+      filter: blur(1px);
+    }
+    > .content.fade {
+      opacity: 1;
+    }
+  }
+  > .content.fade {
+    opacity: 0;
+  }
+}
+
+// This is to make dataview img looks good
+.img-wrapper-dataview {
+  position: relative;
+  overflow: hidden;
+  > img {
+    padding: 15px 15px 15px 15px;
+    object-fit: contain;
+    object-position: center;
+    transition: 200ms ease-in-out;
+  }
+  > .content {
+    position: absolute;
+    inset: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 200ms ease-in-out;
+  }
+  &:hover {
+    cursor: pointer;
+    > img.blur {
+      filter: blur(1px);
+    }
+    > .content.fade {
+      opacity: 1;
+    }
+  }
+  > .content.fade {
+    opacity: 0;
+    padding: 10px;
+    font-size: 15px;
+  }
+}
+
+.table_proejct_name {
+  word-break: break-all;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+
+.table_project_description {
+  word-break: break-word;
+  font-size: 14px;
+  padding: 10px;
+  text-align: justify;
+}
+
+.filter_header {
+  width: 100%;
+  .filter_advance {
+    position: relative;
+    align-items: center;
+    display: 1;
+    margin-top: 40px;
+    width: 100%;
+    .search_field {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .search_field {
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .filter_header {
+    display: flex;
+    width: auto;
+    .filter_advance {
+      margin: 0;
+      position: relative;
+      display: flex;
+      margin-top: 0;
+      width: 100%;
+      .search_field {
+        width: 70%;
+        margin: 0 10px 0 0;
+      }
+      .select {
+        align-items: center;
+        width: 30%;
+      }
+    }
+
+    .layout_option {
+      position: sticky;
+      align-items: center;
+      width: 40%;
+    }
+  }
+}

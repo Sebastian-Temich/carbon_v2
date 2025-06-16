@@ -1,0 +1,31 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: carbon-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: >-
+        carbon-backend-dev.f657614c-855f-43e0-b2b6-962a847ab9d9.nodes.k8s.fr-par.scw.cloud
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: carbon-backend-svc
+                port:
+                  number: 19001
+    - host: >-
+        carbon-frontend-dev.f657614c-855f-43e0-b2b6-962a847ab9d9.nodes.k8s.fr-par.scw.cloud
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: carbon-frontend-svc
+                port:
+                  number: 19002

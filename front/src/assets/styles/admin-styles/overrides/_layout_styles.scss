@@ -1,0 +1,128 @@
+.button-wrapper-inline {
+  margin: 0;
+  padding: 0;
+  margin: 10px 0 10px 0;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-wrapper {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  input {
+    width: 100%;
+    border-radius: $borderRadius;
+    border: 1px solid #ced4da;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+}
+
+.car-card-wrapper {
+  display: flex;
+  justify-content: center;
+
+  .car-card {
+    width: 100%;
+    max-width: 1800px;
+  }
+
+  .car-card-column {
+    padding: 20px;
+  }
+
+  .car-card-image {
+    & .p-image > img {
+      width: 100%;
+    }
+  }
+}
+
+.p-dataview,
+.p-datatable {
+  width: 100%;
+}
+
+.p-dataview-header {
+  border: none !important;
+}
+
+.car-sdg-container {
+  width: 100%;
+  height: 100%;
+  max-width: 838px;
+  flex-wrap: wrap;
+}
+
+.card-box {
+  @extend .card;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .card-header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-header-content {
+    height: 33px !important;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.description-text-ellipsis {
+  @extend .text-ellipsis;
+  height: 33px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin: 14px 0;
+}
+
+.car-admin-content {
+  width: 100%;
+  height: 100%;
+}
+
+.car-component {
+  display: flex;
+  justify-content: center;
+}
+
+.car-container {
+  max-width: 2400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+}
+
+.car-content {
+  justify-content: center;
+  width: 100%;
+}
+
+.progress-spinner {
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}

@@ -1,0 +1,32 @@
+.offset-update {
+  .p-scrollpanel-wrapper {
+    border-right: 10px solid var(--surface-b);
+  }
+
+  .p-scrollpanel-bar {
+    background-color: var(--blue-500);
+    opacity: 1;
+    transition: background-color 0.2s;
+  }
+
+  .p-scrollpanel-bar:hover {
+    background-color: #007ad9;
+  }
+
+  .inplace-wrapper {
+    min-height: 80px;
+
+    .p-inplace-content {
+      .field {
+        padding: 0 5px 0;
+      }
+    }
+
+    .p-disabled {
+      opacity: 1;
+    }
+  }
+  .col-12 {
+    padding: 0;
+  }
+}

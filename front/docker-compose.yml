@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  carbon-frontend:
+    image: frontend:v1
+    container_name: frontend-carbon
+    hostname: frontend-carbon
+    ports:
+      - "3001:3001"
+    restart: unless-stopped 

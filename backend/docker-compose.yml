@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  carbon-backend:
+    image: carbon:v1
+    container_name: carbon
+    hostname: carbon
+    ports:
+      - "9001:8000"
+    environment:
+      # Local envs
+      DEBUG: "True"
+      PORT: "8000"
+      
+      # Database
+      DATABASE_URI: "postgresql://postgres:koziserek@carbon-postgres:5432/postgres"
+      DATABASE_SCHEMA: "carbon"
+      
+      # JWT
+      JWT_SECRET_KEY: "a8f5f167f44f4964e6c998dee827110c"
+      JWT_ACCESS_TOKEN_EXPIRES: "3600"
+      JWT_REFRESH_TOKEN_EXPIRES: "86400"
+      
+      # Blockchain (Testnet settings)
+      CONTRACT_ABI: '[{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"}]'
+      ALCHEMY_URL: "https://eth-sepolia.g.alchemy.com/v2/your-api-key"
+      CONTRACT_ADDRESS: "0x0000000000000000000000000000000000000000"
+      PUBLIC_KEY_METAMASK: "0x0000000000000000000000000000000000000000"
+      PRIVATE_KEY_METAMASK: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    restart: unless-stopped
+    networks:
+      - carbon-network
+
+networks:
+  carbon-network:
+    driver: bridge 
