@@ -24,6 +24,7 @@ PRIVATE_KEY_METAMASK=67e2eaa8ea5ed0355dc22cdc1bf477f44d1e1af759dcd84fcc643fc70a7
 JWT_SECRET_KEY=hu&uLODkRLig~OrAwkcg7OLr9gVF,$P7Y;,t'jO;u$dSyyfPlk
 JWT_ACCESS_TOKEN_EXPIRES=3600
 JWT_REFRESH_TOKEN_EXPIRES=86400
+CORS_ORIGINS=http://localhost:3000,http://localhost:3001
 ```
 
 - **Local envs** - works only on local environment when app started directly by python
