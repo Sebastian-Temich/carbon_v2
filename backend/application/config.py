@@ -17,7 +17,15 @@ class Config:
         'pool_pre_ping': True
     }
     DATABASE_SCHEMA = os.getenv("DATABASE_SCHEMA")
-    CORS_ORIGINS = ["http://localhost:3000", "https://localhost:3000"]
+    origins = os.getenv("CORS_ORIGINS")
+    if origins:
+        CORS_ORIGINS = [origin.strip() for origin in origins.split(",") if origin.strip()]
+    else:
+        CORS_ORIGINS = [
+            "http://localhost:3000",
+            "https://localhost:3000",
+            "http://localhost:3001",
+        ]
 
     # JWT
     JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY")
